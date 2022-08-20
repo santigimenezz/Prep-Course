@@ -1,0 +1,1 @@
+respuesta= prompt ("hola lucas");
