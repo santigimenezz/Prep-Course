@@ -160,6 +160,25 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+  let acumulador=1
+
+  if(arguments.length=== 0){
+    return 0;
+  }
+  else if(arguments.lengths===1){
+    return arguments[0];
+  }
+  else{
+    for(let i=0; i<arguments.length; i++){
+      acumulador= acumulador*arguments[i]
+
+    }
+    return acumulador;
+  }
+
+
+
+
 }
 
 
@@ -181,7 +200,21 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  
+  let domingo=1
+  let lunes=2
+  let martes=3
+  let miercoles=4
+  let jueves=5 
+  let viernes=6
+  let sabado=7
+
+  if(numeroDeDia==1 || numeroDeDia==7){
+    return "Es fin de semana"
+  }
+  else if(numeroDeDia >1 && numeroDeDia < 7) {
+    return "Es dia Laboral"
+  }
+
 } 
 
 
@@ -203,33 +236,42 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  let iguales=[]
-  for(let i= 0; i<arreglo.length; i++){
-    iguales.push(arreglo[i]) 
+  
+
+  for(let i = 0 ; i< arreglo.length -1 ; i++){
+
+    if(arreglo[i] !== arreglo[i+1]){
+      return false;
+    }
+
   }
-  
- if(arreglo=iguales){
-   return true;
- }
-  else return false;
-  
- 
-} 
+  return true;
 
-
-
-
-
-} 
-
+}
 
 function mesesDelAño(array) {
   //Dado un array que contiene algunos meses del año desordenados, recorrer el array buscando los meses de 
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-}
 
+
+  let mesesIndicados=[];
+  
+  for(let i= 0; i<array.length; i++){
+    if(array[i] === "Enero" || array[i] === "Marzo"  || array[i] === "Noviembre"){
+      mesesIndicados.push(array[i]) 
+    }
+  }
+  if(mesesIndicados.length === 3){
+  return mesesIndicados;
+}
+else {
+  return "No se encontraron los meses pedidos"
+}
+  
+
+}
 
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
@@ -251,6 +293,8 @@ function mayorACien(array) {
 
 
 
+let numero = 10
+
 function breakStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
   //Guardar cada nuevo valor en un array. 
@@ -259,7 +303,29 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  
+  let arrayNumeros= [] ;
+  let suma= numero
+  
+  for(let i= 0; i < 10 ; i++){
+    suma= suma + 2;
+    if(suma === i) {
+      break;
+    }
+    else {
+      arrayNumeros.push(suma);
+    }
+  }
+    if(arrayNumeros.length < 10){
+      return "Se interrumpió la ejecución";
+    }
+   else if (arrayNumeros.length === 10){
+     return arrayNumeros;
+   }
+
 }
+
+
 
 
 function continueStatement(numero) {
@@ -269,7 +335,24 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+
+  let arrayNumeros= [] ;
+  let suma= numero
+  
+  for(let i= 0; i < 10 ; i++){
+    if(i === 5) {
+      continue;
+    }
+    else {
+      suma= suma + 2;
+      arrayNumeros.push(suma)
+    }
+  }
+  return arrayNumeros;
+
+
 }
+
 
 
 // No modificar nada debajo de esta línea
